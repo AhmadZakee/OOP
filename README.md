@@ -4,7 +4,8 @@ The goal is to build:
 - 📚 Strong conceptual clarity for university exams 
 - 💡 Deep understanding of OOP design principles 
 - 💻 Interview-ready implementation skills 
-- 🧠 Problem-solving mindset for real-world applications - 🏗️ Core Concepts Covered 
+- 🧠 Problem-solving mindset for real-world applications
+- 🏗️ Core Concepts Covered 
 🔹 Introduction to Object-Oriented Programming 
 🔹 Classes & Objects 
 🔹 Encapsulation 
