@@ -1,0 +1,23 @@
+>>>> Day = 01 (Basics of Objects and Classes!)
+.
+.
+.
+import java.util.Arrays;
+public class Solution {
+   public static void main(String[] args) {
+   Student std1 = new Student();
+
+   std1.name = "Zakee ahmad";
+   std1.age = 21;
+   std1.marks = 9f;
+
+   System.out.println(std1.name);
+   System.out.println(std1.age);
+   System.out.println(std1.marks);
+   }
+  static class Student{
+      String name;
+      int age;
+      float marks;
+   }
+}
