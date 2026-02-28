@@ -5,7 +5,8 @@ The goal is to build:
 - 💡 Deep understanding of OOP design principles 
 - 💻 Interview-ready implementation skills 
 - 🧠 Problem-solving mindset for real-world applications
-- 🏗️ Core Concepts Covered 
+- 🏗️ Core Concepts Covered
+   
 🔹 Introduction to Object-Oriented Programming 
 🔹 Classes & Objects 
 🔹 Encapsulation 
