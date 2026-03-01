@@ -15,9 +15,35 @@ public class Solution {
    System.out.println(std1.age);
    System.out.println(std1.marks);
    }
+   
   static class Student{
       String name;
       int age;
       float marks;
    }
+}
+
+>>>> Access the Class data via using ArrayList At one time;
+.
+.
+.
+import java.util.ArrayList;
+public class Main {
+    public static void main(String[] args) {
+        Student std1 = new Student();
+        std1.age = 21;
+        std1.name = "Zakee ahmad";
+        std1.marks = 98;
+
+        ArrayList<Student> list = new ArrayList<>();
+        list.add(std1);
+        for (Student i : list) {
+            System.out.println("Name is : " + i.name + "| "+"Age is : " + i.age + "| "+"Marks's is : "+ + i.marks);
+        }
+    }
+    static class Student {
+        String name;
+        int age;
+        float marks;
+    }
 }
