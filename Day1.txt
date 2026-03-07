@@ -1,0 +1,204 @@
+/* Day 1 – Basics of Classes and Objects
+1. What is a Class?
+
+Definition :
+A Class is a blueprint or template used to create objects.
+It defines the properties (variables) and behaviors (methods) that an object will have.
+
+>>> Real Life Example :
+Think about a Car.
+A car blueprint contains:
+color
+engine
+speed
+model
+But the blueprint itself is not a car.
+When we create a real car from the blueprint, it becomes an object.
+
+Syntax :
+class Student{
+    String name;
+    int age;
+    float marks;
+}
+
+Here:
+Student = Class
+name, age, marks = Properties (Variables)
+
+
+2. What is an Object?
+Definition
+
+An Object is an instance of a class.
+
+It represents a real-world entity and contains data + behavior.
+
+Example:
+
+A specific student named Zakee
+
+A specific car like BMW
+
+Example Code :
+
+public class Solution {
+
+   public static void main(String[] args) {
+
+      Student std1 = new Student();
+
+      std1.name = "Zakee Ahmad";
+      std1.age = 21;
+      std1.marks = 9f;
+
+      System.out.println(std1.name);
+      System.out.println(std1.age);
+      System.out.println(std1.marks);
+   }
+
+   static class Student{
+      String name;
+      int age;
+      float marks;
+   }
+}
+Output : 
+Zakee Ahmad
+21
+9.0
+
+>>>>  Important Properties of Objects :
+
+Every object has 3 things:
+
+1️⃣ State → data stored in variables
+2️⃣ Behavior → methods/functions
+3️⃣ Identity → unique memory location
+
+3. Access Class Data Using ArrayList :
+
+Sometimes we want to store multiple objects together.
+
+Java provides ArrayList for dynamic storage.
+
+Example :
+
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student std1 = new Student();
+        std1.name = "Zakee Ahmad";
+        std1.age = 21;
+        std1.marks = 98;
+
+        ArrayList<Student> list = new ArrayList<>();
+
+        list.add(std1);
+
+        for(Student s : list){
+            System.out.println(
+            "Name : " + s.name +
+            " | Age : " + s.age +
+            " | Marks : " + s.marks);
+        }
+    }
+
+    static class Student{
+        String name;
+        int age;
+        float marks;
+    }
+}
+
+>>>> Why Use ArrayList?
+
+✔ Dynamic size
+✔ Stores multiple objects
+✔ Easy iteration using loops
+
+4. Constructor in Java Definition :
+
+A Constructor is a special method that is automatically called when an object is created.
+
+Purpose:
+
+Initialize object data
+Set default values
+Important Properties
+
+✔ Constructor name must be same as class name
+✔ It has no return type
+✔ Called automatically
+✔ Used to initialize objects 
+
+class Student{
+
+   String name;
+   int age;
+   float marks;
+
+   Student(){
+      this.name = "Zakee Ahmad";
+      this.age = 21;
+      this.marks = 9f;
+   }
+}
+
+>>>> Creating Objects :
+Student std1 = new Student();
+Student std2 = new Student();
+
+Both objects will get default values.
+
+5. Methods Inside Class :
+
+A class can contain functions (methods) that define behavior.
+
+Example:
+
+greeting student
+calculating factorial
+printing student data
+
+Example :
+class Student{
+
+    String name;
+    int age;
+    float marks;
+
+    void greet(String name){
+        System.out.println("Have a nice day " + name);
+    }
+
+    int factorial(int n){
+
+        int fact = 1;
+
+        for(int i = 1; i <= n; i++){
+            fact *= i;
+        }
+
+        return fact;
+    }
+}
+
+>>>> Calling Method Using Object :
+
+Student s = new Student();
+
+s.greet("Zakee");
+
+int result = s.factorial(5);
+
+System.out.println(result);
+
+Output :
+
+Have a nice day Zakee
+120
+*/
