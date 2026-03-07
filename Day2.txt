@@ -1,0 +1,76 @@
+package OOP;
+
+/*Day 2 – Inheritance and Object Relationships What is Inheritance?
+
+Definition :
+Inheritance is a mechanism in which one class inherits properties and methods from another class.
+
+Parent Class → Base class
+Child Class → Derived class
+
+Example – Parent and Child Classes
+
+public class Parent {
+
+    float money;
+    int bungla;
+    int car;
+    String carName;
+
+     Parent() {
+
+        money = 100000000f;
+        bungla = 3;
+        car = 2;
+        carName = "BMW";
+    }
+
+     void Blashing() {
+
+        System.out.println("May Allah bless You!");
+
+    }
+}
+
+>>>> super Keyword :
+
+Definition :
+
+The super keyword refers to the parent class.
+
+It is used to:
+Access parent variables
+Call parent constructors
+Call parent methods
+
+Example :
+super.money
+
+>>>> Multilevel Inheritance :
+
+# Structure :
+GrandParent
+     ↓
+Parent
+     ↓
+Child
+
+class Grand_Parent{
+
+    String grandName;
+    String address;
+
+     Grand_Parent(){
+
+        grandName = "Sayda Khatoon";
+        address = "London";
+
+    }
+}
+
+class Parent extends Grand_Parent{
+
+    String fatherName;
+    String motherName;
+
+} */

@@ -1,0 +1,109 @@
+package OOP;
+
+/*Day 3 – OOP Principles :
+
+>>>> The 4 Pillars of Object-Oriented Programming!
+
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction
+Polymorphism
+
+>>> Definition :
+Polymorphism means:
+
+One method can perform different tasks depending on the object.
+Compile-Time Polymorphism.
+Also called Method Overloading.
+
+class Calculator {
+
+    int add(int a, int b) {
+
+        return a + b;
+
+    }
+
+    int add(int a, int b, int c) {
+
+        return a + b + c;
+
+    }
+}
+
+>>>> Run-Time Polymorphism : 
+
+Also called Method Overriding. 
+
+class Animal {
+
+    void sound() {
+
+        System.out.println("Animal makes sound");
+
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+
+        System.out.println("Dog barks");
+
+    }
+}
+
+>>>> Encapsulation :
+
+Definition :-
+
+Encapsulation is the process of hiding data and controlling access using methods.
+
+Example :
+
+class Student {
+
+    private int marks;
+
+    public void setMarks(int marks) {
+
+        this.marks = marks;
+
+    }
+
+    public int getMarks() {
+
+        return marks;
+
+    }
+}
+
+>>>> Abstraction :
+
+Definition :-
+
+Abstraction hides internal implementation details and shows only essential features.
+
+Example : 
+
+abstract class Animal {
+
+    abstract void sound();
+
+    void eat() {
+
+        System.out.println("Animal eats");
+
+    }
+}
+
+class Dog extends Animal {
+
+    void sound() {
+
+        System.out.println("Dog barks");
+
+    }
+} */
