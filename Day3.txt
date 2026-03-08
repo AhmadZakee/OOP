@@ -8,7 +8,6 @@ Encapsulation
 Inheritance
 Polymorphism
 Abstraction
-Polymorphism
 
 >>> Definition :
 Polymorphism means:
@@ -106,4 +105,115 @@ class Dog extends Animal {
         System.out.println("Dog barks");
 
     }
-} */
+} 
+
+>>>>>  Abstraction  & Encapsulation !
+
+1. Abstraction in Java
+Definition (Write this in exams)
+
+Abstraction is the process of hiding implementation details and showing only essential features of an object.
+
+Focus: What an object does, not how it does it.
+
+>> Real-Life Example
+
+When you use an ATM machine, you can:
+
+Withdraw money
+
+Check balance
+
+But you don’t know the internal banking server logic.
+
+That is abstraction.
+
+>> How Java Achieves Abstraction?
+
+Java provides abstraction using:
+
+Abstract Class
+
+Interface
+
+>>Example using Abstract Class
+abstract class Animal {
+    abstract void sound();   // abstract method (no body)
+
+    void eat() {             // normal method
+        System.out.println("Animal eats food");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+>> Key Points
+
+Abstract class → declared using abstract keyword.
+
+Abstract method → no body.
+
+Object of abstract class cannot be created.
+
+Child class must implement abstract methods.
+
+2. Encapsulation in Java
+ Definition (Write this in exams)
+
+Encapsulation is the process of wrapping data (variables) and methods into a single unit and restricting direct access to data.
+
+>> Focus: Data hiding + controlled access.
+
+>>>> How Java Achieves Encapsulation?
+
+Using:
+
+private variables
+
+Public getter and setter methods
+
+ Example :
+class Student {
+    private int marks;   // data hiding
+
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
+
+    public int getMarks() {
+        return marks;
+    }
+}
+>>> Why Encapsulation is Important?
+
+✔ Protects data
+✔ Improves security
+✔ Makes code maintainable
+✔ Allows validation before setting values
+
+Example with validation:
+
+public void setMarks(int marks) {
+    if(marks >= 0 && marks <= 100) {
+        this.marks = marks;
+    }
+}
+Abstraction vs Encapsulation (Exam Comparison Table)
+Feature	Abstraction	Encapsulation
+Meaning	Hiding implementation	Hiding data
+Focus	What to show	How to protect data
+Achieved By	Abstract class / Interface	Private variables + getters/setters
+Level	Design level	Implementation level
+Interview-Ready One Line Answer
+
+If interviewer asks:
+
+What is the difference?
+
+You say:
+
+Abstraction hides implementation details and shows only essential features, while encapsulation hides data and restricts direct access using access modifiers.
+*/
