@@ -1,0 +1,292 @@
+==================================================
+OOP 5 | ABSTRACT CLASSES, INTERFACES, ANNOTATIONS
+==================================================
+
+This section covers advanced Object-Oriented Programming concepts in Java.
+These are extremely important for writing scalable, maintainable, and interview-level code.
+
+--------------------------------------------------
+1. ABSTRACT CLASSES IN JAVA
+--------------------------------------------------
+
+Definition:
+An abstract class is a class that cannot be instantiated (object cannot be created).
+It is used to achieve abstraction (hiding implementation details).
+
+Syntax:
+
+abstract class ClassName {
+    abstract void methodName();  // abstract method
+}
+
+Key Points:
+- Declared using 'abstract' keyword
+- Can contain:
+  ✔ Abstract methods (without body)
+  ✔ Concrete methods (with body)
+- Cannot be instantiated
+- Can have constructors
+- Can have instance variables
+
+Example:
+
+abstract class Animal {
+    String name;
+
+    Animal(String name) {
+        this.name = name;
+    }
+
+    abstract void sound();
+
+    void sleep() {
+        System.out.println(name + " is sleeping");
+    }
+}
+
+class Dog extends Animal {
+
+    Dog() {
+        super("Dog");
+    }
+
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal obj = new Dog();
+        obj.sound();
+        obj.sleep();
+    }
+}
+
+Output:
+Dog barks
+Dog is sleeping
+
+Important Rules:
+1. If a class has even ONE abstract method → class must be abstract
+2. Subclass MUST implement all abstract methods
+3. Abstract class can have static and final methods
+
+Use Cases:
+- When classes share common behavior
+- When partial implementation is needed
+
+--------------------------------------------------
+2. INTERFACES IN JAVA
+--------------------------------------------------
+
+Definition:
+An interface is a blueprint of a class that contains only abstract methods (before Java 8).
+
+Modern Java Features:
+- Default methods (Java 8)
+- Static methods (Java 8)
+- Private methods (Java 9)
+
+Syntax:
+
+interface InterfaceName {
+    void methodName();
+}
+
+Key Characteristics:
+- All methods are public and abstract by default
+- Variables are public, static, and final
+- Supports multiple inheritance
+
+Example:
+
+interface Animal {
+    void sound();
+}
+
+interface Pet {
+    void play();
+}
+
+class Dog implements Animal, Pet {
+
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+
+    public void play() {
+        System.out.println("Dog plays");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();
+        d.play();
+    }
+}
+
+Output:
+Dog barks
+Dog plays
+
+Default Method Example:
+
+interface Vehicle {
+    default void start() {
+        System.out.println("Vehicle starts");
+    }
+}
+
+--------------------------------------------------
+3. ABSTRACT CLASS vs INTERFACE
+--------------------------------------------------
+
+Feature              Abstract Class         Interface
+----------------------------------------------------------
+Methods              Abstract + Concrete    Only abstract (pre-Java 8)
+Multiple Inheritance Not supported          Supported
+Variables            Any type               public static final only
+Constructor          Yes                    No
+Access Modifiers     Any                    public (default)
+Use Case             Partial abstraction    Full abstraction
+
+--------------------------------------------------
+4. ANNOTATIONS IN JAVA
+--------------------------------------------------
+
+Definition:
+Annotations provide metadata (data about data) to the compiler or JVM.
+
+They do NOT directly affect program logic but guide behavior.
+
+Syntax:
+
+@Override
+void methodName() {}
+
+Common Built-in Annotations:
+
+1. @Override
+   - Ensures method is overriding correctly
+
+2. @Deprecated
+   - Marks method as outdated
+
+3. @SuppressWarnings
+   - Suppresses compiler warnings
+
+Example:
+
+class Parent {
+    void show() {
+        System.out.println("Parent method");
+    }
+}
+
+class Child extends Parent {
+
+    @Override
+    void show() {
+        System.out.println("Child method");
+    }
+}
+
+--------------------------------------------------
+5. CUSTOM ANNOTATIONS
+--------------------------------------------------
+
+You can create your own annotations.
+
+Syntax:
+
+@interface MyAnnotation {
+    String value();
+}
+
+Example:
+
+@interface Info {
+    String author();
+    int version();
+}
+
+@Info(author = "Zakee", version = 1)
+class TestClass {
+}
+
+--------------------------------------------------
+6. RETENTION POLICIES
+--------------------------------------------------
+
+Annotations can be available at different stages:
+
+1. SOURCE   → Available only in source code
+2. CLASS    → Stored in .class file
+3. RUNTIME  → Available at runtime (Reflection)
+
+Example:
+
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyAnnotation {
+}
+
+--------------------------------------------------
+7. REAL-WORLD USAGE
+--------------------------------------------------
+
+Abstract Class:
+- Used in frameworks (e.g., base classes)
+
+Interface:
+- Used in APIs and multiple inheritance
+
+Annotations:
+- Used in:
+  ✔ Spring Framework (@Autowired, @Component)
+  ✔ Hibernate (@Entity)
+  ✔ Testing (@Test)
+
+--------------------------------------------------
+8. INTERVIEW QUESTIONS
+--------------------------------------------------
+
+Q1: Can we instantiate abstract class?
+→ No
+
+Q2: Can abstract class have constructor?
+→ Yes
+
+Q3: Can interface have method body?
+→ Yes (default & static methods)
+
+Q4: Why multiple inheritance via interface?
+→ Avoids diamond problem
+
+Q5: Difference between @Override and @Overload?
+→ Override = runtime polymorphism
+→ Overload = compile-time polymorphism
+
+--------------------------------------------------
+9. BEST PRACTICES
+--------------------------------------------------
+
+✔ Use abstract class when:
+   - You want code reuse
+   - You need state (variables)
+
+✔ Use interface when:
+   - You want multiple inheritance
+   - You define contract only
+
+✔ Use annotations when:
+   - You need metadata/configuration
+
+--------------------------------------------------
+END OF NOTES
+--------------------------------------------------
